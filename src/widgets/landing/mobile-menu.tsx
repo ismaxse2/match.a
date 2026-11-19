@@ -11,7 +11,7 @@ export function MobileMenu({ items }: { items: readonly { label: string; href: s
   useEffect(() => {
     if (!open) return;
     const header = trigger.current?.closest('header');
-    const media = window.matchMedia('(max-width:600px)');
+    const media = window.matchMedia('(max-width: 700px)');
     const close = () => setOpen(false);
     const outside = (event: Event) => {
       if (event.target instanceof Node && !header?.contains(event.target)) close();

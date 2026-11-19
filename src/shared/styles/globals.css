@@ -55,6 +55,11 @@ body {
 .masthead nav {
   margin-left: auto;
 }
+.masthead > .brand-link,
+.masthead > .button,
+.masthead > nav a {
+  white-space: nowrap;
+}
 .navigation {
   flex-wrap: wrap;
   gap: clamp(12px, 2vw, 32px);
@@ -304,6 +309,26 @@ footer {
 .reasons-art .sticker {
   position: relative;
   z-index: 1;
+}
+@media (width < 800px) {
+  .reasons > .section {
+    position: relative;
+  }
+  .reasons-art {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 12px;
+    translate: 0 -50%;
+  }
+  .reasons-art .sticker.sticker--reverse {
+    --sticker-angle: 10deg;
+    padding: 11px 22px 15px;
+    font-size: 14px;
+  }
+  .reasons-art .sticker svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 .reasons-illustration {
   display: none;
@@ -607,7 +632,7 @@ footer :focus-visible {
 .mobile-menu {
   display: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .masthead {
     min-height: 0;
     position: relative;
@@ -701,6 +726,8 @@ footer :focus-visible {
       text-decoration: none;
     }
   }
+}
+@media (max-width: 600px) {
   .hero-copy {
     padding: 26px 20px 60px;
   }
@@ -749,7 +776,7 @@ footer :focus-visible {
   }
 }
 
-@media (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 700px) and (prefers-reduced-motion: no-preference) {
   .menu-panel {
     transition:
       opacity 160ms ease,
@@ -763,6 +790,20 @@ footer :focus-visible {
   }
 }
 @media (max-width: 360px) {
+  .masthead {
+    gap: 4px;
+  }
+  .masthead .brand {
+    font-size: 21px;
+  }
+  .masthead .button--compact {
+    padding-inline: 8px;
+    font-size: 12px;
+  }
+  .masthead .button--compact svg {
+    width: 15px;
+    height: 15px;
+  }
   .hero {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -785,7 +826,7 @@ html {
     scroll-behavior: smooth;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .header-slot {
     margin-bottom: 12px;
   }
