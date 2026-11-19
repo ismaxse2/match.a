@@ -60,7 +60,7 @@ export function InquiryForm() {
         label={
           <>
             Согласен на передачу и обработку персональных данных и принимаю{' '}
-            <a className="inquiry-policy" href="/legal">
+            <a className="inquiry-policy" href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/legal`}>
               политику конфиденциальности
             </a>
             .

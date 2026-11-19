@@ -14,6 +14,8 @@ import { Navigation } from '@/shared/ui/navigation/navigation';
 import { audiences, navigationItems, products, reasons, team } from './content';
 import { TeamBio } from './team-bio';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export function Audiences() {
   return (
     <section className="shell section" id="services">
@@ -69,7 +71,7 @@ export function Reasons() {
               </span>
             </Badge>
             <Image
-              src="/match-illustration.svg"
+              src={`${basePath}/match-illustration.svg`}
               width={360}
               height={360}
               alt=""
@@ -100,7 +102,13 @@ export function Team() {
           <article className="team-profile" key={name}>
             <div className="team-profile-heading">
               <div className="team-portrait">
-                <Image src={avatar} width={120} height={120} alt="" className="team-avatar" />
+                <Image
+                  src={`${basePath}${avatar}`}
+                  width={120}
+                  height={120}
+                  alt=""
+                  className="team-avatar"
+                />
               </div>
               <div>
                 <h3>{name}</h3>
@@ -179,7 +187,7 @@ export function Footer() {
             items={[
               { label: 'Услуги', href: '#services' },
               ...navigationItems,
-              { label: 'Правовая информация', href: '/legal' },
+              { label: 'Правовая информация', href: `${basePath}/legal` },
             ]}
           />
           <small>© MATCH.A, 2026. Все права защищены.</small>

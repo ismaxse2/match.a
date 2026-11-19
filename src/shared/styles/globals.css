@@ -521,7 +521,7 @@ footer p {
   font-size: 14px;
 }
 @media (max-width: 799px) {
-  .footer-menu a[href='/legal'] {
+  .footer-menu a[href$='/legal'] {
     display: none;
   }
 }
