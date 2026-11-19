@@ -819,6 +819,7 @@ footer :focus-visible {
   box-shadow: 0 1px 0 var(--rule);
 }
 html {
+  background: var(--background);
   scroll-padding-top: 100px;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -827,6 +828,15 @@ html {
   }
 }
 @media (max-width: 700px) {
+  .header-bar.is-fixed::before {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    bottom: 100%;
+    height: max(96px, env(safe-area-inset-top, 0px));
+    background: inherit;
+    pointer-events: none;
+  }
   .header-slot {
     margin-bottom: 12px;
   }
